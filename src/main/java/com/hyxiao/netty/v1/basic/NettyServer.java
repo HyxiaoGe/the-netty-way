@@ -1,4 +1,4 @@
-package com.hyxiao.basic;
+package com.hyxiao.netty.v1.basic;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
@@ -31,7 +31,7 @@ public class NettyServer {
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
 
         ServerBootstrap serverBootstrap = new ServerBootstrap();
-        serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).childHandler(new ChannelInitializer<NioSocketChannel>() {
+        serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class).childHandler( new ChannelInitializer<NioSocketChannel>() {
             protected void initChannel(NioSocketChannel ch) {
                 //  负责读取客户端来的数据
                 ch.pipeline().addLast(new ServerHandler());

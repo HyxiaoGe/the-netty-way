@@ -1,8 +1,6 @@
-package com.hyxiao.transfer;
+package com.hyxiao.netty.v1.transfer;
 
 import lombok.Data;
-
-import static com.hyxiao.transfer.Command.LOGIN_REQUEST;
 
 @Data
 public class LoginRequestPacket extends Packet {
@@ -15,6 +13,6 @@ public class LoginRequestPacket extends Packet {
 
     @Override
     public Byte getCommand() {
-        return LOGIN_REQUEST;
+        return Command.LOGIN_REQUEST;
     }
 }

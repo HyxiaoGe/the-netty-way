@@ -1,4 +1,4 @@
-package com.hyxiao.basic;
+package com.hyxiao.netty.v1.basic;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

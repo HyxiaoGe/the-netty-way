@@ -1,4 +1,4 @@
-package com.hyxiao.transfer;
+package com.hyxiao.netty.v1.transfer;
 
 import lombok.Data;
 

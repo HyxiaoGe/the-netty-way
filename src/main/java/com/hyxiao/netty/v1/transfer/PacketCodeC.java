@@ -1,12 +1,10 @@
-package com.hyxiao.transfer;
+package com.hyxiao.netty.v1.transfer;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.hyxiao.transfer.Command.LOGIN_REQUEST;
 
 public class PacketCodeC {
 
@@ -16,7 +14,7 @@ public class PacketCodeC {
 
     static {
         packetTypeMap = new HashMap<>();
-        packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.class);
+        packetTypeMap.put(Command.LOGIN_REQUEST, LoginRequestPacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
