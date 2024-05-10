@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_package = "com.hyxiao.common.protobuf";
+option java_outer_classname = "MessageModule";
+
+enum MessageType {
+  REQUEST = 0;
+  RESPONSE = 1;
+}
+
+enum ResultType {
+  SUCCESS = 0;
+  FAIL = 1;
+  SYSTEM_ERROR = 2;
+}
+
+message Message {
+  int64 crcCode = 1;
+
+  MessageType messageType = 2;
+
+  ResultType resultType = 3;
+
+  // 比较数据包的对象
+  string module = 4;
+  // 具体的操作（增删查改）
+  string cmd = 5;
+  //  数据包的内容
+  bytes body = 6;
+
+}
