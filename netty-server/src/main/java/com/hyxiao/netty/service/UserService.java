@@ -1,7 +1,10 @@
 package com.hyxiao.netty.service;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.hyxiao.annotation.Cmd;
 import com.hyxiao.annotation.Module;
+import com.hyxiao.common.protobuf.Result;
+import com.hyxiao.common.protobuf.UserModule;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,23 +12,39 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Cmd(cmd = "saveUser")
-    public Object saveUser(Object user) {
-        return user;
+    public Result<?> saveUser(byte[] data) {
+        try {
+            UserModule.User user = UserModule.User.parseFrom(data);
+            System.err.println(user.getUserId());
+            System.err.println(user.getUserName());
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+            return Result.FAILURE();
+        }
+        return Result.SUCCESS();
     }
 
     @Cmd(cmd = "getUser")
-    public Object getUser(Object user) {
-        return user;
+    public Result<?> getUser(Object user) {
+        return null;
     }
 
     @Cmd(cmd = "updateUser")
-    public Object updateUser(Object user) {
-        return user;
+    public Result<?> updateUser(byte[] data) {
+        try {
+            UserModule.User user = UserModule.User.parseFrom(data);
+            System.err.println(user.getUserId());
+            System.err.println(user.getUserName());
+        } catch (InvalidProtocolBufferException e) {
+            e.printStackTrace();
+            return Result.FAILURE();
+        }
+        return Result.SUCCESS();
     }
 
     @Cmd(cmd = "deleteUser")
-    public Object deleteUser(Object user) {
-        return user;
+    public Result<?> deleteUser(Object user) {
+        return null;
     }
 
 }
