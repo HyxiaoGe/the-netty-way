@@ -42,7 +42,7 @@ public final class MessageModule {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -51,7 +51,7 @@ public final class MessageModule {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static MessageType valueOf(int value) {
       return forNumber(value);
     }
@@ -94,7 +94,7 @@ public final class MessageModule {
     public static MessageType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -122,13 +122,13 @@ public final class MessageModule {
      */
     SUCCESS(0),
     /**
-     * <code>FAIL = 1;</code>
+     * <code>FAILURE = 1;</code>
      */
-    FAIL(1),
+    FAILURE(1),
     /**
-     * <code>SYSTEM_ERROR = 2;</code>
+     * <code>SYS_ERROR = 2;</code>
      */
-    SYSTEM_ERROR(2),
+    SYS_ERROR(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -137,18 +137,18 @@ public final class MessageModule {
      */
     public static final int SUCCESS_VALUE = 0;
     /**
-     * <code>FAIL = 1;</code>
+     * <code>FAILURE = 1;</code>
      */
-    public static final int FAIL_VALUE = 1;
+    public static final int FAILURE_VALUE = 1;
     /**
-     * <code>SYSTEM_ERROR = 2;</code>
+     * <code>SYS_ERROR = 2;</code>
      */
-    public static final int SYSTEM_ERROR_VALUE = 2;
+    public static final int SYS_ERROR_VALUE = 2;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -157,7 +157,7 @@ public final class MessageModule {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static ResultType valueOf(int value) {
       return forNumber(value);
     }
@@ -165,8 +165,8 @@ public final class MessageModule {
     public static ResultType forNumber(int value) {
       switch (value) {
         case 0: return SUCCESS;
-        case 1: return FAIL;
-        case 2: return SYSTEM_ERROR;
+        case 1: return FAILURE;
+        case 2: return SYS_ERROR;
         default: return null;
       }
     }
@@ -201,7 +201,7 @@ public final class MessageModule {
     public static ResultType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -247,46 +247,26 @@ public final class MessageModule {
     com.hyxiao.common.protobuf.MessageModule.ResultType getResultType();
 
     /**
-     * <pre>
-     * 比较数据包的对象
-     * </pre>
-     *
      * <code>string module = 4;</code>
      */
-    java.lang.String getModule();
+    String getModule();
     /**
-     * <pre>
-     * 比较数据包的对象
-     * </pre>
-     *
      * <code>string module = 4;</code>
      */
     com.google.protobuf.ByteString
         getModuleBytes();
 
     /**
-     * <pre>
-     * 具体的操作（增删查改）
-     * </pre>
-     *
      * <code>string cmd = 5;</code>
      */
-    java.lang.String getCmd();
+    String getCmd();
     /**
-     * <pre>
-     * 具体的操作（增删查改）
-     * </pre>
-     *
      * <code>string cmd = 5;</code>
      */
     com.google.protobuf.ByteString
         getCmdBytes();
 
     /**
-     * <pre>
-     *  数据包的内容
-     * </pre>
-     *
      * <code>bytes body = 6;</code>
      */
     com.google.protobuf.ByteString getBody();
@@ -311,7 +291,7 @@ public final class MessageModule {
       body_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -322,7 +302,7 @@ public final class MessageModule {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -353,13 +333,13 @@ public final class MessageModule {
               break;
             }
             case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               module_ = s;
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               cmd_ = s;
               break;
@@ -393,8 +373,8 @@ public final class MessageModule {
       return com.hyxiao.common.protobuf.MessageModule.internal_static_Message_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.hyxiao.common.protobuf.MessageModule.internal_static_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -445,40 +425,32 @@ public final class MessageModule {
     }
 
     public static final int MODULE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object module_;
+    private volatile Object module_;
     /**
-     * <pre>
-     * 比较数据包的对象
-     * </pre>
-     *
      * <code>string module = 4;</code>
      */
-    public java.lang.String getModule() {
-      java.lang.Object ref = module_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getModule() {
+      Object ref = module_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         module_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * 比较数据包的对象
-     * </pre>
-     *
      * <code>string module = 4;</code>
      */
     public com.google.protobuf.ByteString
         getModuleBytes() {
-      java.lang.Object ref = module_;
-      if (ref instanceof java.lang.String) {
+      Object ref = module_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         module_ = b;
         return b;
       } else {
@@ -487,40 +459,32 @@ public final class MessageModule {
     }
 
     public static final int CMD_FIELD_NUMBER = 5;
-    private volatile java.lang.Object cmd_;
+    private volatile Object cmd_;
     /**
-     * <pre>
-     * 具体的操作（增删查改）
-     * </pre>
-     *
      * <code>string cmd = 5;</code>
      */
-    public java.lang.String getCmd() {
-      java.lang.Object ref = cmd_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getCmd() {
+      Object ref = cmd_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         cmd_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * 具体的操作（增删查改）
-     * </pre>
-     *
      * <code>string cmd = 5;</code>
      */
     public com.google.protobuf.ByteString
         getCmdBytes() {
-      java.lang.Object ref = cmd_;
-      if (ref instanceof java.lang.String) {
+      Object ref = cmd_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         cmd_ = b;
         return b;
       } else {
@@ -531,10 +495,6 @@ public final class MessageModule {
     public static final int BODY_FIELD_NUMBER = 6;
     private com.google.protobuf.ByteString body_;
     /**
-     * <pre>
-     *  数据包的内容
-     * </pre>
-     *
      * <code>bytes body = 6;</code>
      */
     public com.google.protobuf.ByteString getBody() {
@@ -542,7 +502,7 @@ public final class MessageModule {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -552,7 +512,7 @@ public final class MessageModule {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (crcCode_ != 0L) {
@@ -576,7 +536,7 @@ public final class MessageModule {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -609,8 +569,8 @@ public final class MessageModule {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
@@ -633,7 +593,7 @@ public final class MessageModule {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -728,7 +688,7 @@ public final class MessageModule {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -736,15 +696,15 @@ public final class MessageModule {
     public static Builder newBuilder(com.hyxiao.common.protobuf.MessageModule.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -760,8 +720,8 @@ public final class MessageModule {
         return com.hyxiao.common.protobuf.MessageModule.internal_static_Message_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.hyxiao.common.protobuf.MessageModule.internal_static_Message_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -774,7 +734,7 @@ public final class MessageModule {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -783,7 +743,7 @@ public final class MessageModule {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         crcCode_ = 0L;
@@ -801,18 +761,18 @@ public final class MessageModule {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.hyxiao.common.protobuf.MessageModule.internal_static_Message_descriptor;
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.MessageModule.Message getDefaultInstanceForType() {
         return com.hyxiao.common.protobuf.MessageModule.Message.getDefaultInstance();
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.MessageModule.Message build() {
         com.hyxiao.common.protobuf.MessageModule.Message result = buildPartial();
         if (!result.isInitialized()) {
@@ -821,7 +781,7 @@ public final class MessageModule {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.MessageModule.Message buildPartial() {
         com.hyxiao.common.protobuf.MessageModule.Message result = new com.hyxiao.common.protobuf.MessageModule.Message(this);
         result.crcCode_ = crcCode_;
@@ -834,39 +794,39 @@ public final class MessageModule {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.hyxiao.common.protobuf.MessageModule.Message) {
           return mergeFrom((com.hyxiao.common.protobuf.MessageModule.Message)other);
@@ -903,12 +863,12 @@ public final class MessageModule {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1043,40 +1003,32 @@ public final class MessageModule {
         return this;
       }
 
-      private java.lang.Object module_ = "";
+      private Object module_ = "";
       /**
-       * <pre>
-       * 比较数据包的对象
-       * </pre>
-       *
        * <code>string module = 4;</code>
        */
-      public java.lang.String getModule() {
-        java.lang.Object ref = module_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getModule() {
+        Object ref = module_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           module_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
-       * <pre>
-       * 比较数据包的对象
-       * </pre>
-       *
        * <code>string module = 4;</code>
        */
       public com.google.protobuf.ByteString
           getModuleBytes() {
-        java.lang.Object ref = module_;
+        Object ref = module_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           module_ = b;
           return b;
         } else {
@@ -1084,14 +1036,10 @@ public final class MessageModule {
         }
       }
       /**
-       * <pre>
-       * 比较数据包的对象
-       * </pre>
-       *
        * <code>string module = 4;</code>
        */
       public Builder setModule(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1101,10 +1049,6 @@ public final class MessageModule {
         return this;
       }
       /**
-       * <pre>
-       * 比较数据包的对象
-       * </pre>
-       *
        * <code>string module = 4;</code>
        */
       public Builder clearModule() {
@@ -1114,10 +1058,6 @@ public final class MessageModule {
         return this;
       }
       /**
-       * <pre>
-       * 比较数据包的对象
-       * </pre>
-       *
        * <code>string module = 4;</code>
        */
       public Builder setModuleBytes(
@@ -1132,40 +1072,32 @@ public final class MessageModule {
         return this;
       }
 
-      private java.lang.Object cmd_ = "";
+      private Object cmd_ = "";
       /**
-       * <pre>
-       * 具体的操作（增删查改）
-       * </pre>
-       *
        * <code>string cmd = 5;</code>
        */
-      public java.lang.String getCmd() {
-        java.lang.Object ref = cmd_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getCmd() {
+        Object ref = cmd_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           cmd_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
-       * <pre>
-       * 具体的操作（增删查改）
-       * </pre>
-       *
        * <code>string cmd = 5;</code>
        */
       public com.google.protobuf.ByteString
           getCmdBytes() {
-        java.lang.Object ref = cmd_;
+        Object ref = cmd_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           cmd_ = b;
           return b;
         } else {
@@ -1173,14 +1105,10 @@ public final class MessageModule {
         }
       }
       /**
-       * <pre>
-       * 具体的操作（增删查改）
-       * </pre>
-       *
        * <code>string cmd = 5;</code>
        */
       public Builder setCmd(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1190,10 +1118,6 @@ public final class MessageModule {
         return this;
       }
       /**
-       * <pre>
-       * 具体的操作（增删查改）
-       * </pre>
-       *
        * <code>string cmd = 5;</code>
        */
       public Builder clearCmd() {
@@ -1203,10 +1127,6 @@ public final class MessageModule {
         return this;
       }
       /**
-       * <pre>
-       * 具体的操作（增删查改）
-       * </pre>
-       *
        * <code>string cmd = 5;</code>
        */
       public Builder setCmdBytes(
@@ -1223,20 +1143,12 @@ public final class MessageModule {
 
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <pre>
-       *  数据包的内容
-       * </pre>
-       *
        * <code>bytes body = 6;</code>
        */
       public com.google.protobuf.ByteString getBody() {
         return body_;
       }
       /**
-       * <pre>
-       *  数据包的内容
-       * </pre>
-       *
        * <code>bytes body = 6;</code>
        */
       public Builder setBody(com.google.protobuf.ByteString value) {
@@ -1249,10 +1161,6 @@ public final class MessageModule {
         return this;
       }
       /**
-       * <pre>
-       *  数据包的内容
-       * </pre>
-       *
        * <code>bytes body = 6;</code>
        */
       public Builder clearBody() {
@@ -1261,13 +1169,13 @@ public final class MessageModule {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1289,7 +1197,7 @@ public final class MessageModule {
 
     private static final com.google.protobuf.Parser<Message>
         PARSER = new com.google.protobuf.AbstractParser<Message>() {
-      @java.lang.Override
+      @Override
       public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1302,12 +1210,12 @@ public final class MessageModule {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Message> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.hyxiao.common.protobuf.MessageModule.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1327,15 +1235,15 @@ public final class MessageModule {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\023proto/message.proto\"\211\001\n\007Message\022\017\n\007crc" +
       "Code\030\001 \001(\003\022!\n\013messageType\030\002 \001(\0162\014.Messag" +
       "eType\022\037\n\nresultType\030\003 \001(\0162\013.ResultType\022\016" +
       "\n\006module\030\004 \001(\t\022\013\n\003cmd\030\005 \001(\t\022\014\n\004body\030\006 \001(" +
       "\014*(\n\013MessageType\022\013\n\007REQUEST\020\000\022\014\n\010RESPONS" +
-      "E\020\001*5\n\nResultType\022\013\n\007SUCCESS\020\000\022\010\n\004FAIL\020\001" +
-      "\022\020\n\014SYSTEM_ERROR\020\002B+\n\032com.hyxiao.common." +
-      "protobufB\rMessageModuleb\006proto3"
+      "E\020\001*5\n\nResultType\022\013\n\007SUCCESS\020\000\022\013\n\007FAILUR" +
+      "E\020\001\022\r\n\tSYS_ERROR\020\002B)\n\030com.hyxiao.common.pr" +
+      "otobufB\rMessageModuleb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1354,7 +1262,7 @@ public final class MessageModule {
     internal_static_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Message_descriptor,
-        new java.lang.String[] { "CrcCode", "MessageType", "ResultType", "Module", "Cmd", "Body", });
+        new String[] { "CrcCode", "MessageType", "ResultType", "Module", "Cmd", "Body", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -11,40 +11,29 @@ import org.springframework.stereotype.Service;
 @Module(module = "user")
 public class UserService {
 
-    @Cmd(cmd = "saveUser")
+    @Cmd(cmd = "save")
     public Result<?> saveUser(byte[] data) {
+        UserModule.User user;
         try {
-            UserModule.User user = UserModule.User.parseFrom(data);
-            System.err.println(user.getUserId());
-            System.err.println(user.getUserName());
+            user = UserModule.User.parseFrom(data);
+            System.err.println("ID：" + user.getUserId() + ", Name：" + user.getUserName());
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
             return Result.FAILURE();
         }
-        return Result.SUCCESS();
+        return Result.SUCCESS(user);
     }
 
-    @Cmd(cmd = "getUser")
-    public Result<?> getUser(Object user) {
-        return null;
-    }
-
-    @Cmd(cmd = "updateUser")
+    @Cmd(cmd = "update")
     public Result<?> updateUser(byte[] data) {
+        UserModule.User user;
         try {
-            UserModule.User user = UserModule.User.parseFrom(data);
-            System.err.println(user.getUserId());
-            System.err.println(user.getUserName());
+            user = UserModule.User.parseFrom(data);
+            System.err.println("ID：" + user.getUserId() + ", Name：" + user.getUserName());
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
             return Result.FAILURE();
         }
-        return Result.SUCCESS();
+        return Result.SUCCESS(user);
     }
-
-    @Cmd(cmd = "deleteUser")
-    public Result<?> deleteUser(Object user) {
-        return null;
-    }
-
 }

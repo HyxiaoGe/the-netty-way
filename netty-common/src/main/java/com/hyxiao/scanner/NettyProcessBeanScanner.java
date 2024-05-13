@@ -46,7 +46,6 @@ public class NettyProcessBeanScanner implements BeanPostProcessor {
                     boolean isMethodPresent = method.isAnnotationPresent(Cmd.class);
                     if (isMethodPresent) {
                         String cmdName = method.getAnnotation(Cmd.class).cmd();
-                        System.out.println("cmd: " + cmdName);
                         if (InvokerTable.getInvoker(moduleName, cmdName) == null) {
                             InvokerTable.addInvoker(moduleName, cmdName, Invoker.createInvoker(method, bean));
                         } else {

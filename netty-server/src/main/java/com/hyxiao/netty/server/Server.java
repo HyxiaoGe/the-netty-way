@@ -9,9 +9,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Server {
 
     public Server() {
@@ -23,7 +21,7 @@ public class Server {
         try {
             bootstrap.group(boosGroup, workerGroup).channel(NioServerSocketChannel.class).option(ChannelOption.SO_BACKLOG, 1024).handler(new LoggingHandler(LogLevel.INFO)).childHandler(new ServerInitializer());
 
-            ChannelFuture future = bootstrap.bind(8765);
+            ChannelFuture future = bootstrap.bind(8765).sync();
             future.channel().closeFuture().sync();
 
         } catch (Exception e) {

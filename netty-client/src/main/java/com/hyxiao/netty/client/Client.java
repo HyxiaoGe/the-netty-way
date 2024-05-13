@@ -1,5 +1,7 @@
 package com.hyxiao.netty.client;
 
+import com.google.protobuf.GeneratedMessageV3;
+import com.hyxiao.common.protobuf.MessageBuilder;
 import com.hyxiao.netty.config.ClientInitializer;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
@@ -8,13 +10,12 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-@Component
 public class Client {
 
     private ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
@@ -27,12 +28,33 @@ public class Client {
 
     private Channel channel;
 
-    public Client() throws Exception {
-        this.connect(HOST, PORT);
+    private AtomicBoolean isConnect = new AtomicBoolean(false);
+
+    private static class SingletonHolder {
+        private static final Client INSTANCE = new Client();
+    }
+
+    public static final Client getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+
+    private Client()  {
+    }
+
+    public synchronized void init() {
+        if(!isConnect.get()) {
+            try {
+                this.connect(HOST, PORT);
+                isConnect.set(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void connect(String host, int port) throws Exception {
 
+        // 配置客户端NIO线程组
         try {
             // 配置客户端NIO线程组
             Bootstrap bootstrap = new Bootstrap();
@@ -40,7 +62,7 @@ public class Client {
             // 发起异步连接操作
             ChannelFuture future = bootstrap.connect(host, port).sync();
             this.channel = future.channel();
-            System.out.println("Netty client start ok : " + host + ":" + port);
+            System.out.println("Client Start.. ");
             this.channel.closeFuture().sync();
         } finally {
             //  所有资源释放完成之后，清空资源，再次发起重连操作
@@ -57,7 +79,17 @@ public class Client {
                 }
             });
         }
+    }
 
+    /**
+     * 	$sendMessage
+     * 发送数据的方法
+     * @param module 模块
+     * @param cmd 指令
+     * @param messageData 数据内容
+     */
+    public void sendMessage(String module, String cmd , GeneratedMessageV3 messageData) {
+        this.channel.writeAndFlush(MessageBuilder.getRequestMessage(module, cmd, messageData));
     }
 
 

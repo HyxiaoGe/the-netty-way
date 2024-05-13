@@ -21,7 +21,7 @@ public final class GroupModule {
     /**
      * <code>string groupId = 1;</code>
      */
-    java.lang.String getGroupId();
+    String getGroupId();
     /**
      * <code>string groupId = 1;</code>
      */
@@ -31,7 +31,7 @@ public final class GroupModule {
     /**
      * <code>string groupName = 2;</code>
      */
-    java.lang.String getGroupName();
+    String getGroupName();
     /**
      * <code>string groupName = 2;</code>
      */
@@ -55,7 +55,7 @@ public final class GroupModule {
       groupName_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -66,7 +66,7 @@ public final class GroupModule {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -80,13 +80,13 @@ public final class GroupModule {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               groupId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               groupName_ = s;
               break;
@@ -115,8 +115,8 @@ public final class GroupModule {
       return com.hyxiao.common.protobuf.GroupModule.internal_static_Group_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.hyxiao.common.protobuf.GroupModule.internal_static_Group_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -124,18 +124,18 @@ public final class GroupModule {
     }
 
     public static final int GROUPID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object groupId_;
+    private volatile Object groupId_;
     /**
      * <code>string groupId = 1;</code>
      */
-    public java.lang.String getGroupId() {
-      java.lang.Object ref = groupId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getGroupId() {
+      Object ref = groupId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         groupId_ = s;
         return s;
       }
@@ -145,11 +145,11 @@ public final class GroupModule {
      */
     public com.google.protobuf.ByteString
         getGroupIdBytes() {
-      java.lang.Object ref = groupId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = groupId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         groupId_ = b;
         return b;
       } else {
@@ -158,18 +158,18 @@ public final class GroupModule {
     }
 
     public static final int GROUPNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object groupName_;
+    private volatile Object groupName_;
     /**
      * <code>string groupName = 2;</code>
      */
-    public java.lang.String getGroupName() {
-      java.lang.Object ref = groupName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getGroupName() {
+      Object ref = groupName_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         groupName_ = s;
         return s;
       }
@@ -179,11 +179,11 @@ public final class GroupModule {
      */
     public com.google.protobuf.ByteString
         getGroupNameBytes() {
-      java.lang.Object ref = groupName_;
-      if (ref instanceof java.lang.String) {
+      Object ref = groupName_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         groupName_ = b;
         return b;
       } else {
@@ -192,7 +192,7 @@ public final class GroupModule {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -202,7 +202,7 @@ public final class GroupModule {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getGroupIdBytes().isEmpty()) {
@@ -214,7 +214,7 @@ public final class GroupModule {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -231,8 +231,8 @@ public final class GroupModule {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
@@ -249,7 +249,7 @@ public final class GroupModule {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -335,7 +335,7 @@ public final class GroupModule {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -343,15 +343,15 @@ public final class GroupModule {
     public static Builder newBuilder(com.hyxiao.common.protobuf.GroupModule.Group prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -367,8 +367,8 @@ public final class GroupModule {
         return com.hyxiao.common.protobuf.GroupModule.internal_static_Group_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.hyxiao.common.protobuf.GroupModule.internal_static_Group_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -381,7 +381,7 @@ public final class GroupModule {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -390,7 +390,7 @@ public final class GroupModule {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         groupId_ = "";
@@ -400,18 +400,18 @@ public final class GroupModule {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.hyxiao.common.protobuf.GroupModule.internal_static_Group_descriptor;
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.GroupModule.Group getDefaultInstanceForType() {
         return com.hyxiao.common.protobuf.GroupModule.Group.getDefaultInstance();
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.GroupModule.Group build() {
         com.hyxiao.common.protobuf.GroupModule.Group result = buildPartial();
         if (!result.isInitialized()) {
@@ -420,7 +420,7 @@ public final class GroupModule {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.GroupModule.Group buildPartial() {
         com.hyxiao.common.protobuf.GroupModule.Group result = new com.hyxiao.common.protobuf.GroupModule.Group(this);
         result.groupId_ = groupId_;
@@ -429,39 +429,39 @@ public final class GroupModule {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.hyxiao.common.protobuf.GroupModule.Group) {
           return mergeFrom((com.hyxiao.common.protobuf.GroupModule.Group)other);
@@ -486,12 +486,12 @@ public final class GroupModule {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -510,20 +510,20 @@ public final class GroupModule {
         return this;
       }
 
-      private java.lang.Object groupId_ = "";
+      private Object groupId_ = "";
       /**
        * <code>string groupId = 1;</code>
        */
-      public java.lang.String getGroupId() {
-        java.lang.Object ref = groupId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getGroupId() {
+        Object ref = groupId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           groupId_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -531,11 +531,11 @@ public final class GroupModule {
        */
       public com.google.protobuf.ByteString
           getGroupIdBytes() {
-        java.lang.Object ref = groupId_;
+        Object ref = groupId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           groupId_ = b;
           return b;
         } else {
@@ -546,7 +546,7 @@ public final class GroupModule {
        * <code>string groupId = 1;</code>
        */
       public Builder setGroupId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -579,20 +579,20 @@ public final class GroupModule {
         return this;
       }
 
-      private java.lang.Object groupName_ = "";
+      private Object groupName_ = "";
       /**
        * <code>string groupName = 2;</code>
        */
-      public java.lang.String getGroupName() {
-        java.lang.Object ref = groupName_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getGroupName() {
+        Object ref = groupName_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           groupName_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -600,11 +600,11 @@ public final class GroupModule {
        */
       public com.google.protobuf.ByteString
           getGroupNameBytes() {
-        java.lang.Object ref = groupName_;
+        Object ref = groupName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           groupName_ = b;
           return b;
         } else {
@@ -615,7 +615,7 @@ public final class GroupModule {
        * <code>string groupName = 2;</code>
        */
       public Builder setGroupName(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -647,13 +647,13 @@ public final class GroupModule {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -675,7 +675,7 @@ public final class GroupModule {
 
     private static final com.google.protobuf.Parser<Group>
         PARSER = new com.google.protobuf.AbstractParser<Group>() {
-      @java.lang.Override
+      @Override
       public Group parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -688,12 +688,12 @@ public final class GroupModule {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Group> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.hyxiao.common.protobuf.GroupModule.Group getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -713,10 +713,10 @@ public final class GroupModule {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\021proto/group.proto\"+\n\005Group\022\017\n\007groupId\030" +
-      "\001 \001(\t\022\021\n\tgroupName\030\002 \001(\tB)\n\032com.hyxiao.c" +
-      "ommon.protobufB\013GroupModuleb\006proto3"
+      "\001 \001(\t\022\021\n\tgroupName\030\002 \001(\tB\'\n\030com.hyxiao.com" +
+      "mon.protobufB\013GroupModuleb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -735,7 +735,7 @@ public final class GroupModule {
     internal_static_Group_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Group_descriptor,
-        new java.lang.String[] { "GroupId", "GroupName", });
+        new String[] { "GroupId", "GroupName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

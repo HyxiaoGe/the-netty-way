@@ -1,5 +1,6 @@
 package com.hyxiao.netty;
 
+import com.hyxiao.netty.listener.ApplicationListenerReadyEvent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,8 +9,8 @@ public class ServerApplication
 {
     public static void main( String[] args )
     {
-        System.out.println("Netty Server Start...");
         SpringApplication application = new SpringApplication(ServerApplication.class);
+        application.addListeners(new ApplicationListenerReadyEvent());
         application.run(args);
     }
 }

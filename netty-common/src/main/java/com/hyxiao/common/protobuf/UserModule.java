@@ -21,7 +21,7 @@ public final class UserModule {
     /**
      * <code>string userId = 1;</code>
      */
-    java.lang.String getUserId();
+    String getUserId();
     /**
      * <code>string userId = 1;</code>
      */
@@ -31,7 +31,7 @@ public final class UserModule {
     /**
      * <code>string userName = 2;</code>
      */
-    java.lang.String getUserName();
+    String getUserName();
     /**
      * <code>string userName = 2;</code>
      */
@@ -55,7 +55,7 @@ public final class UserModule {
       userName_ = "";
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -66,7 +66,7 @@ public final class UserModule {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
+        throw new NullPointerException();
       }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -80,13 +80,13 @@ public final class UserModule {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               userId_ = s;
               break;
             }
             case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+              String s = input.readStringRequireUtf8();
 
               userName_ = s;
               break;
@@ -115,8 +115,8 @@ public final class UserModule {
       return com.hyxiao.common.protobuf.UserModule.internal_static_User_descriptor;
     }
 
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    @Override
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.hyxiao.common.protobuf.UserModule.internal_static_User_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
@@ -124,18 +124,18 @@ public final class UserModule {
     }
 
     public static final int USERID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userId_;
+    private volatile Object userId_;
     /**
      * <code>string userId = 1;</code>
      */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getUserId() {
+      Object ref = userId_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         userId_ = s;
         return s;
       }
@@ -145,11 +145,11 @@ public final class UserModule {
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
+      Object ref = userId_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         userId_ = b;
         return b;
       } else {
@@ -158,18 +158,18 @@ public final class UserModule {
     }
 
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object userName_;
+    private volatile Object userName_;
     /**
      * <code>string userName = 2;</code>
      */
-    public java.lang.String getUserName() {
-      java.lang.Object ref = userName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+    public String getUserName() {
+      Object ref = userName_;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         userName_ = s;
         return s;
       }
@@ -179,11 +179,11 @@ public final class UserModule {
      */
     public com.google.protobuf.ByteString
         getUserNameBytes() {
-      java.lang.Object ref = userName_;
-      if (ref instanceof java.lang.String) {
+      Object ref = userName_;
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         userName_ = b;
         return b;
       } else {
@@ -192,7 +192,7 @@ public final class UserModule {
     }
 
     private byte memoizedIsInitialized = -1;
-    @java.lang.Override
+    @Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -202,7 +202,7 @@ public final class UserModule {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getUserIdBytes().isEmpty()) {
@@ -214,7 +214,7 @@ public final class UserModule {
       unknownFields.writeTo(output);
     }
 
-    @java.lang.Override
+    @Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -231,8 +231,8 @@ public final class UserModule {
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
@@ -249,7 +249,7 @@ public final class UserModule {
       return true;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -335,7 +335,7 @@ public final class UserModule {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    @java.lang.Override
+    @Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -343,15 +343,15 @@ public final class UserModule {
     public static Builder newBuilder(com.hyxiao.common.protobuf.UserModule.User prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-    @java.lang.Override
+    @Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -367,8 +367,8 @@ public final class UserModule {
         return com.hyxiao.common.protobuf.UserModule.internal_static_User_descriptor;
       }
 
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      @Override
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.hyxiao.common.protobuf.UserModule.internal_static_User_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -381,7 +381,7 @@ public final class UserModule {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -390,7 +390,7 @@ public final class UserModule {
                 .alwaysUseFieldBuilders) {
         }
       }
-      @java.lang.Override
+      @Override
       public Builder clear() {
         super.clear();
         userId_ = "";
@@ -400,18 +400,18 @@ public final class UserModule {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.hyxiao.common.protobuf.UserModule.internal_static_User_descriptor;
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.UserModule.User getDefaultInstanceForType() {
         return com.hyxiao.common.protobuf.UserModule.User.getDefaultInstance();
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.UserModule.User build() {
         com.hyxiao.common.protobuf.UserModule.User result = buildPartial();
         if (!result.isInitialized()) {
@@ -420,7 +420,7 @@ public final class UserModule {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public com.hyxiao.common.protobuf.UserModule.User buildPartial() {
         com.hyxiao.common.protobuf.UserModule.User result = new com.hyxiao.common.protobuf.UserModule.User(this);
         result.userId_ = userId_;
@@ -429,39 +429,39 @@ public final class UserModule {
         return result;
       }
 
-      @java.lang.Override
+      @Override
       public Builder clone() {
         return super.clone();
       }
-      @java.lang.Override
+      @Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.setField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-      @java.lang.Override
+      @Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-      @java.lang.Override
+      @Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return super.setRepeatedField(field, index, value);
       }
-      @java.lang.Override
+      @Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return super.addRepeatedField(field, value);
       }
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.hyxiao.common.protobuf.UserModule.User) {
           return mergeFrom((com.hyxiao.common.protobuf.UserModule.User)other);
@@ -486,12 +486,12 @@ public final class UserModule {
         return this;
       }
 
-      @java.lang.Override
+      @Override
       public final boolean isInitialized() {
         return true;
       }
 
-      @java.lang.Override
+      @Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -510,20 +510,20 @@ public final class UserModule {
         return this;
       }
 
-      private java.lang.Object userId_ = "";
+      private Object userId_ = "";
       /**
        * <code>string userId = 1;</code>
        */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getUserId() {
+        Object ref = userId_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           userId_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -531,11 +531,11 @@ public final class UserModule {
        */
       public com.google.protobuf.ByteString
           getUserIdBytes() {
-        java.lang.Object ref = userId_;
+        Object ref = userId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           userId_ = b;
           return b;
         } else {
@@ -546,7 +546,7 @@ public final class UserModule {
        * <code>string userId = 1;</code>
        */
       public Builder setUserId(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -579,20 +579,20 @@ public final class UserModule {
         return this;
       }
 
-      private java.lang.Object userName_ = "";
+      private Object userName_ = "";
       /**
        * <code>string userName = 2;</code>
        */
-      public java.lang.String getUserName() {
-        java.lang.Object ref = userName_;
-        if (!(ref instanceof java.lang.String)) {
+      public String getUserName() {
+        Object ref = userName_;
+        if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
+          String s = bs.toStringUtf8();
           userName_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
       /**
@@ -600,11 +600,11 @@ public final class UserModule {
        */
       public com.google.protobuf.ByteString
           getUserNameBytes() {
-        java.lang.Object ref = userName_;
+        Object ref = userName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+                  (String) ref);
           userName_ = b;
           return b;
         } else {
@@ -615,7 +615,7 @@ public final class UserModule {
        * <code>string userName = 2;</code>
        */
       public Builder setUserName(
-          java.lang.String value) {
+          String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -647,13 +647,13 @@ public final class UserModule {
         onChanged();
         return this;
       }
-      @java.lang.Override
+      @Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
-      @java.lang.Override
+      @Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -675,7 +675,7 @@ public final class UserModule {
 
     private static final com.google.protobuf.Parser<User>
         PARSER = new com.google.protobuf.AbstractParser<User>() {
-      @java.lang.Override
+      @Override
       public User parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -688,12 +688,12 @@ public final class UserModule {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<User> getParserForType() {
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.hyxiao.common.protobuf.UserModule.User getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -713,10 +713,10 @@ public final class UserModule {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\020proto/user.proto\"(\n\004User\022\016\n\006userId\030\001 \001" +
-      "(\t\022\020\n\010userName\030\002 \001(\tB(\n\032com.hyxiao.commo" +
-      "n.protobufB\nUserModuleb\006proto3"
+      "(\t\022\020\n\010userName\030\002 \001(\tB&\n\030com.hyxiao.common." +
+      "protobufB\nUserModuleb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -735,7 +735,7 @@ public final class UserModule {
     internal_static_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_User_descriptor,
-        new java.lang.String[] { "UserId", "UserName", });
+        new String[] { "UserId", "UserName", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

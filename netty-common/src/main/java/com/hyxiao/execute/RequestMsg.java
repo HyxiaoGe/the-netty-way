@@ -7,17 +7,17 @@ import com.hyxiao.scanner.Invoker;
 import com.hyxiao.scanner.InvokerTable;
 import io.netty.channel.ChannelHandlerContext;
 
-public class RequestMsg implements Runnable{
-
+public class RequestMsg implements Runnable {
     private MessageModule.Message message;
-    private ChannelHandlerContext context;
 
-    public RequestMsg(MessageModule.Message message, ChannelHandlerContext context) {
+    private ChannelHandlerContext ctx;
+
+    private final static String RETURN = "-return";
+
+    public RequestMsg(MessageModule.Message message, ChannelHandlerContext ctx) {
         this.message = message;
-        this.context = context;
+        this.ctx = ctx;
     }
-
-
     @Override
     public void run() {
 
@@ -25,8 +25,13 @@ public class RequestMsg implements Runnable{
         String cmd = message.getCmd();
         byte[] data = message.getBody().toByteArray();
         Invoker invoker = InvokerTable.getInvoker(module, cmd);
-
         Result<?> result = (Result<?>) invoker.invoke(data);
-        context.writeAndFlush(MessageBuilder.getResponseMessage(module, cmd, result.getResultType(), result.getContent()));
+
+        ctx.writeAndFlush(MessageBuilder
+                .getResponseMessage(module + RETURN,
+                        cmd + RETURN,
+                        result.getResultType(),
+                        result.getContent()));
     }
+
 }
